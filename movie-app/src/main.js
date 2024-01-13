@@ -9,7 +9,7 @@ import MovieDetailView from "./pages/MovieDetailView.vue";
 const routes = [
     {path: '/', component: HomeView},
     {path: '/movie-detail/:film_id', component: MovieDetailView}
-]
+]                           
 
 
 const router = createRouter({

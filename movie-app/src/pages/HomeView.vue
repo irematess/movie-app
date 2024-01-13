@@ -1,13 +1,22 @@
 <script setup>
+import { ref } from "vue";
+import { onMounted } from "vue";
 import  Product  from "../components/Product.vue"
+import { fetchMovies } from "../services/movieService.js"
 
-import { useFetch } from "../useFetch";
-const {response} = useFetch("https://api.themoviedb.org/3/movie/popular?api_key=a2df3d1a7611194432bbdf1fc80540f2&language=tr");
+const movies = ref([]);
+
+onMounted(() => {
+  fetchMovies()
+  .then(data => movies.value = data);
+})
+ 
+
 </script>
 
 <template>
-    <main v-if="response?.results">
-      <Product v-for="item in response.results " 
+    <main v-if="movies">
+      <Product v-for="item in movies" 
       :key="item.id"
       :product="item"
       />

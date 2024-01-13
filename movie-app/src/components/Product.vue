@@ -1,5 +1,5 @@
 <script setup>
-import moment from 'moment';
+import moment from 'moment/moment';
 import 'moment/locale/tr'
 moment.locale('tr')
 
