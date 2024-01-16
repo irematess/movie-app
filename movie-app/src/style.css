@@ -8,16 +8,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5rem 2rem;
     background-color: black;
     color: white;
 }
 
 main{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* width: 960px; */
-    /* text-align: center; */
-    padding: 2rem 10rem;
     align-items: center;
     justify-content: center;
     display: grid;

@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { onMounted } from "vue";
 import  Product  from "../components/Product.vue"
-import { fetchMovies } from "../services/movieService.js"
+import { fetchMovies } from "../services/movieService"
 
 const movies = ref([]);
 
@@ -23,3 +23,13 @@ onMounted(() => {
       
   </main>
 </template>
+
+<style scoped>
+body{
+  padding: 2rem 10rem;
+}
+
+main{
+  padding: 5rem 2rem;
+}
+</style>
