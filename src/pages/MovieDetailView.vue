@@ -56,12 +56,17 @@ moment.locale('tr')
     }
 
     figure{
-        width: 1900px;
+        width: 100%;
         margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10rem;
     }
 
     img{
-        width: 100%;
+       width: 1000px;
+       
     }
 
     main{

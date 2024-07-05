@@ -28,6 +28,7 @@ onMounted(() => {
 </script>
 
 <template>
+    <div class="reviewList">
     <div class="review" v-for="review in movieReviewList">
         <div class="author">
             <figure>
@@ -43,14 +44,21 @@ onMounted(() => {
             </div>
            
         </div>
-        <p>{{review.content}}</p>
+        <p v-if="review.content.length <= 500">{{review.content }}</p>
+        <p v-else>{{review.content.slice(0,477)}}...</p>
+        
     </div>
+</div>
 </template>
 
 
 
 <style scoped>
+body{
+    width: 100%;
+}
     .review{
+        
         padding: 2rem 3rem;
         margin: 0 1rem 1rem 0;
         background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(47,46,46,1) 100%); 
@@ -71,4 +79,20 @@ onMounted(() => {
         display: flex;
         flex-direction: column;
     }
+
+    .author figure{
+        width: 250px;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .reviewList {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        
+    }
+    
 </style>

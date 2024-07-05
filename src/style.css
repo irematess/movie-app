@@ -66,3 +66,15 @@ img{
 .date{
     font-style: italic;
 }
+
+.title{
+    text-align: center;
+    padding-top: 6rem;
+    font-size: 5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: italic;
+    font-weight: 100;
+}
+a{
+    text-decoration: none;
+}

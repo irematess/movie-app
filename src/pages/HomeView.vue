@@ -15,6 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <h1 class="title">Movie App</h1>
     <main v-if="movies">
       <Product v-for="item in movies" 
       :key="item.id"
