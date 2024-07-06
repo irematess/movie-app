@@ -7,105 +7,32 @@ import moment from 'moment/moment';
 import 'moment/locale/tr';
 moment.locale('tr')
 
-
- const route = useRoute();
- const movieDetail = ref({
+const route = useRoute();
+const movieDetail = ref({
     title:"yükleniyor"    
- });
+});
 
- 
-
- onMounted(() => {
+onMounted(() => {
     fetchMovieDetail(route.params.film_id)
-    .then((data) => movieDetail.value = data) 
-
-    
+    .then((data) => movieDetail.value = data)    
 })
-
-
 </script>
 
-<template>     
-    <header>
-        <figure>
-            <img :src="`https://image.tmdb.org/t/p/w500/${movieDetail.backdrop_path}`" alt="">
+<template>
+    <main class="flex max-lg:flex-col max-lg:gap-16 container mx-auto justify-around text-white py-40 ">
+        <figure class="max-lg:w-full w-2/5 max-lg:rounded-none rounded-2xl overflow-hidden">
+            <img :src="`https://image.tmdb.org/t/p/w500/${movieDetail.backdrop_path}`" class="w-full h-full">
         </figure>
-    </header>
-    <main>
-        <article>
-            <h1>{{ movieDetail.title }}</h1>   
-            <p>{{ movieDetail.overview }}</p> 
-            <div class="about">
+        <article class="max-lg:w-full w-1/2 p-10 rounded-2xl max-lg:rounded-none flex flex-col justify-between">
+            <h1 class="text-4xl">{{ movieDetail.title }}</h1>   
+            <p class="text-xl text-gray-300">{{ movieDetail.overview }}</p> 
+            <span class="about flex justify-between gap-2">
                 <span class="rating"><i class="fa-solid fa-star"></i>{{ movieDetail.vote_average }} / 10</span>
                 <span class="date">{{ moment(movieDetail.release_date).format('MMMM Do YYYY') }}</span>
-            </div>
-            
+            </span>
         </article>
-        <section>
-            <MovieReviewList />
-        </section>
     </main>
-    
+    <section class="container mx-auto ">
+        <MovieReviewList />
+    </section>
 </template>
-
-<style scoped>
-    
-    body{
-        margin: 0;
-        padding: 0;
-    }
-
-    figure{
-        width: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 10rem;
-    }
-
-    img{
-       width: 1000px;
-       
-    }
-
-    main{
-        padding: 10rem 0;
-        display: flex;
-        flex-direction: column;
-    }       
-
-    article{
-        width: 960px;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 3rem;
-        border-radius: 1rem;
-        background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(47,46,46,1) 100%); 
-    }
-
-    article h1{
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 1rem;
-    }
-
-    article p{
-    font-size: 1.2rem;
-    letter-spacing: .1rem;
-    }
-
-    .about{
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    section{
-        display: grid;
-        grid-template-columns: auto auto auto;
-        gap: 1rem;
-        padding: 5rem 10rem;
-    }
-</style>

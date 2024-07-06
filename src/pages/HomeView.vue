@@ -10,27 +10,15 @@ onMounted(() => {
   fetchMovies()
   .then(data => movies.value = data);
 })
- 
-
 </script>
 
 <template>
-  <h1 class="title">Movie App</h1>
-    <main v-if="movies">
+  <h1 class="text-white text-center pt-10 font-sans text-[4rem] italic">Movie App</h1>
+    <main v-if="movies" class="container mx-auto py-20  grid max-xl:grid-cols-1 grid-cols-2 gap-10">
       <Product v-for="item in movies" 
       :key="item.id"
       :product="item"
+      class="w-full h-full"
       />
-      
-  </main>
+    </main>
 </template>
-
-<style scoped>
-body{
-  padding: 2rem 10rem;
-}
-
-main{
-  padding: 5rem 2rem;
-}
-</style>

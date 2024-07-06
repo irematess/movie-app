@@ -9,15 +9,15 @@ moment.locale('tr')
 </script>
 
 <template>
-    <article>
-        <figure>
-          <img :src="`https://image.tmdb.org/t/p/w500/${product.poster_path}`" alt="">
+    <article class="flex flex-row text-base text-white p-4 max-md:rounded-none rounded-2xl">
+        <figure class="w-1/4 mr-8">
+          <img :src="`https://image.tmdb.org/t/p/w500/${product.poster_path}`" class="w-full h-full">
         </figure>
-        <div class="about">
-          <router-link :to=" `/movie-detail/${product.id}`"><h4>{{ product.title }}</h4></router-link>
-          <p>{{ product.overview }}</p>
-          <p class="rating"><i class="fa-solid fa-star"></i>{{ product.vote_average }} / 10</p>
-          <span class="date">{{ moment(product.date).format('MMMM Do YYYY') }}</span>
+        <div class="w-3/4 flex flex-col justify-between pt-2">
+          <router-link :to=" `/movie-detail/${product.id}`"><h4 class="text-4xl">{{ product.title }}</h4></router-link>
+          <p class="text-[#ffffff7a]"> {{ product.overview }}</p>
+          <p class="flex gap-2"><i class="fa-solid fa-star text-yellow-500"></i>{{ product.vote_average }} / 10</p>
+          <span class="italic">{{ moment(product.date).format('MMMM Do YYYY') }}</span>
         </div>
     </article> 
 </template>
