@@ -9,9 +9,9 @@ moment.locale('tr')
 </script>
 
 <template>
-    <article class="flex flex-row text-base text-white p-4 max-md:rounded-none rounded-2xl">
+    <article class="flex flex-row justify-center items-center text-base text-white p-4 max-md:rounded-none rounded-2xl">
         <figure class="w-1/4 mr-8">
-          <img :src="`https://image.tmdb.org/t/p/w500/${product.poster_path}`" class="w-full h-full">
+          <img :src="`https://image.tmdb.org/t/p/w500/${product.poster_path}`" class="w-full h-full max-lg:h-auto">
         </figure>
         <div class="w-3/4 flex flex-col justify-between pt-2">
           <router-link :to=" `/movie-detail/${product.id}`"><h4 class="text-4xl">{{ product.title }}</h4></router-link>

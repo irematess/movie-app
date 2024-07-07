@@ -24,7 +24,7 @@ onMounted(() => {
             <img :src="`https://image.tmdb.org/t/p/w500/${movieDetail.backdrop_path}`" class="w-full h-full">
         </figure>
         <article class="max-lg:w-full w-1/2 p-10 rounded-2xl max-lg:rounded-none flex flex-col justify-between">
-            <h1 class="text-4xl">{{ movieDetail.title }}</h1>   
+            <h1 class="text-4xl max-md:2xl">{{ movieDetail.title }}</h1>   
             <p class="text-xl text-gray-300">{{ movieDetail.overview }}</p> 
             <span class="about flex justify-between gap-2">
                 <span class="rating"><i class="fa-solid fa-star"></i>{{ movieDetail.vote_average }} / 10</span>
