@@ -29,7 +29,7 @@ onMounted(() => {
 
 <template>
     <div class="w-full grid max-lg:grid-cols-1 max-xl:grid-cols-2 grid-cols-3 gap-8 text-white">
-    <article class="review py-8 max-md:py-6 max-sm:px-0 px-12 flex flex-col  gap-4 max-lg:rounded-none rounded-2xl" v-for="review in movieReviewList">
+    <article class="review py-8 max-md:py-6 max-sm:px-4 px-12 flex flex-col  gap-4  rounded-2xl" v-for="review in movieReviewList">
         <div class="flex flex-row justify-between ">
             <figure class="h-60 w-60 max-md:w-1/2 ">
                 <img v-if="review.author_details.avatar_path" :src="`https://image.tmdb.org/t/p/w500/${review.author_details.avatar_path}`" class="h-full w-full">

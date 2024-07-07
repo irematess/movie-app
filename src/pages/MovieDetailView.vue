@@ -19,11 +19,11 @@ onMounted(() => {
 </script>
 
 <template>
-    <main class="flex max-lg:flex-col max-lg:gap-16 container mx-auto justify-around text-white py-40 ">
-        <figure class="max-lg:w-full w-2/5 max-lg:rounded-none rounded-2xl overflow-hidden">
+    <main class="flex max-lg:flex-col max-xl:px-8 max-lg:gap-16 container mx-auto justify-around text-white py-40 ">
+        <figure class="max-lg:w-full w-2/5  rounded-2xl overflow-hidden">
             <img :src="`https://image.tmdb.org/t/p/w500/${movieDetail.backdrop_path}`" class="w-full h-full">
         </figure>
-        <article class="max-lg:w-full w-1/2 p-10 rounded-2xl max-lg:rounded-none flex flex-col justify-between">
+        <article class="max-lg:w-full w-1/2 p-10 rounded-2xl  flex flex-col justify-between">
             <h1 class="text-4xl max-md:2xl">{{ movieDetail.title }}</h1>   
             <p class="text-xl text-gray-300">{{ movieDetail.overview }}</p> 
             <span class="about flex justify-between gap-2">
@@ -32,7 +32,7 @@ onMounted(() => {
             </span>
         </article>
     </main>
-    <section class="container mx-auto ">
+    <section class="container mx-auto max-xl:px-8 ">
         <MovieReviewList />
     </section>
 </template>

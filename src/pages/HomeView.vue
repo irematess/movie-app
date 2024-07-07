@@ -14,7 +14,7 @@ onMounted(() => {
 
 <template>
   <h1 class="text-white text-center pt-10 font-sans text-[4rem] italic">Movie App</h1>
-    <main v-if="movies" class="container mx-auto py-20  grid max-xl:grid-cols-1 grid-cols-2 gap-10">
+    <main v-if="movies" class="container max-xl:px-8 mx-auto py-20  grid max-xl:grid-cols-1 grid-cols-2 gap-10">
       <Product v-for="item in movies" 
       :key="item.id"
       :product="item"
